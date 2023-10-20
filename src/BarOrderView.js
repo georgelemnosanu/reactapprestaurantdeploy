@@ -4,7 +4,7 @@ function KitchenCommandView() {
     const [commands, setCommands] = useState([]);
 
     useEffect(() => {
-      fetch('http://localhost:8080/command/barCommandList')
+      fetch('https://restaurantdemo-production.up.railway.app/command/barCommandList')
         .then((response) => response.json())
         .then((data) => {
           setCommands(data);
