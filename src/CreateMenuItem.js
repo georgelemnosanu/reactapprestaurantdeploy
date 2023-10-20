@@ -82,7 +82,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 }
 
 CreateMenuItem.propTypes = {
-  onCreateMenuItem: PropTypes.func.isRequired, 
+  onCreateMenuItem: PropTypes.func,
 };
 
 export default CreateMenuItem;
