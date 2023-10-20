@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import EditMenuItem from './EditMenuItem';
+
 
 function ViewAllMenuItems() {
   const [menuItems, setMenuItems] = useState([]);

@@ -825,8 +825,8 @@ function MenuApp() {
   const [menuItemDetails, setMenuItemDetails] = useState({});
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [kitchenNotes, setKitchenNotes] = useState('');
-  const [barNotes, setBarNotes] = useState('');
+  const [kitchenNotes] = useState('');
+  const [barNotes] = useState('');
   const [currentCommandId, setCurrentCommandId] = useState(null); 
 
   useEffect(() => {

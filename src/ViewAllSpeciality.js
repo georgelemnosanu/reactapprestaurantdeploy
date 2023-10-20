@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import CreateSpeciality from './CreateSpeciality';
+
 
 function ViewAllSpeciality() {
   const [specialities, setSpecialities] = useState([]);
@@ -21,13 +21,19 @@ function ViewAllSpeciality() {
     }
   };
 
+
+  
+
   useEffect(() => {
     fetchSpecialities();
   }, []);
 
-  const handleSpecialityCreated = () => {
-    fetchSpecialities();
-  };
+
+
+  
+  // const handleSpecialityCreated = () => {
+  //   fetchSpecialities();
+  // };
 
   const handleSpecialityEdit = (speciality) => {
     setIsEditing(true);
