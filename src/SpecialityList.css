@@ -1,0 +1,16 @@
+/* CSS for SpecialityList */
+.speciality-list {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Style the <pre> element for JSON data */
+  .speciality-list pre {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    overflow: auto; 
+  }
