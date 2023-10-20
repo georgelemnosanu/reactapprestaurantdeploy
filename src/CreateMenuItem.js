@@ -15,7 +15,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 
   const fetchSpecialities = async () => {
     try {
-      const response = await fetch('http://localhost:8080/speciality/allSpeciality');
+      const response = await fetch('https://restaurantdemo-production.up.railway.app/speciality/allSpeciality');
       if (response.ok) {
         const data = await response.json();
         setSpecialities(data);
@@ -29,7 +29,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 
   const handleCreateMenuItem = async () => {
     try {
-      const response = await fetch('http://localhost:8080/menuItem/submitCreateMenuItem', {
+      const response = await fetch('https://restaurantdemo-production.up.railway.app/menuItem/submitCreateMenuItem', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
