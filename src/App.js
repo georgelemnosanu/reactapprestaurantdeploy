@@ -32,7 +32,6 @@ function App() {
 }
 
 function DefaultComponent() {
-    {/* Navigation links with href */}
   
 
   return <div>Please select a route
