@@ -9,7 +9,7 @@ function EditSpeciality({ speciality, onSpecialityUpdated }) {
     if (speciality) {
       const updatedSpeciality = {
         id: speciality.id,
-        newName: newName, // Modifică aici pentru a trece newName în corpul cererii
+        newName: newName, 
   
         
       };

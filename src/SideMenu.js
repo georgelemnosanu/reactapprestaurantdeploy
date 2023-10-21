@@ -134,6 +134,8 @@ import './CssMenuApp.css';
 import ClearAllIcon from '@mui/icons-material/ClearAll';
 import IconButton from '@mui/material/IconButton';
 import SendIcon from '@mui/icons-material/Send';
+import TextField from '@mui/material/TextField';
+
 
 function SideMenu({
   isOpen,
@@ -182,20 +184,26 @@ function SideMenu({
           </li>
         ))}
         <li className="total">Total: {calculateTotal()}RON</li>
-        <div className="center-button-container">
+          <div>
+      <TextField
+        label="Kitchen Notes"
+        variant="outlined"
+        value={kitchenNotes}
+        onChange={(e) => setKitchenNotes(e.target.value)}
+        fullWidth 
+        margin="normal" 
+      />
+      <TextField
+        label="Bar Notes"
+        variant="outlined"
+        value={barNotes}
+        onChange={(e) => setBarNotes(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
+    </div>
+     <div className="center-button-container">
           <div className="button-container">
-            <input
-              type="text"
-              placeholder="Kitchen Notes"
-              value={kitchenNotes}
-              onChange={(e) => setKitchenNotes(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Bar Notes"
-              value={barNotes}
-              onChange={(e) => setBarNotes(e.target.value)}
-            />
             {currentCommand ? (
               <button onClick={() => handleUpdateCommand(kitchenNotes, barNotes)}>
                 Update Command

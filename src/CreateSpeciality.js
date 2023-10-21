@@ -12,7 +12,7 @@ function CreateSpeciality() {
     };
 
  
-    fetch('http://localhost:8080/speciality/submitCreateSpeciality', {
+    fetch('https://restaurantdemo-production.up.railway.app/speciality/submitCreateSpeciality', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

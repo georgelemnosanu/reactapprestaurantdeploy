@@ -57,7 +57,7 @@ function ViewAllSpeciality() {
   
       console.log('Datele trimise la actualizare:', updatedSpeciality); // Adăugați acest console.log
   
-      fetch(`http://localhost:8080/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
+      fetch(`https://restaurantdemo-production.up.railway.app/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +83,7 @@ function ViewAllSpeciality() {
 
   const handleSpecialityDelete = async (specialityId) => {
     try {
-      const response = await fetch(`http://localhost:8080/speciality/deleteSpeciality/${specialityId}`, {
+      const response = await fetch(`https://restaurantdemo-production.up.railway.app/speciality/deleteSpeciality/${specialityId}`, {
         method: 'DELETE',
       });
 

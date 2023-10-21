@@ -64,7 +64,7 @@ function ViewAllMenuItems() {
 
   const handleMenuItemDelete = async (menuItemId) => {
     try {
-        const response = await fetch(`http://localhost:8080/menuItem/deleteMenuItem/${menuItemId}`, {
+        const response = await fetch(`https://restaurantdemo-production.up.railway.app/menuItem/deleteMenuItem/${menuItemId}`, {
             method: 'DELETE',
           });
           

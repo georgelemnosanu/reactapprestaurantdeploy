@@ -8,7 +8,7 @@ function TableSelection() {
 
   useEffect(() => {
     // Fetch table data when the component mounts
-    fetch(`https://restaurantdemo-production.up.railway.app/table/allTables`) // Replace with the appropriate API endpoint
+    fetch(`https://restaurantdemo-production.up.railway.app/table/allTables`) 
       .then(response => response.json())
       .then(data => setTableData(data))
       .catch(error => console.error('Error fetching table data:', error));
