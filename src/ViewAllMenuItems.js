@@ -11,7 +11,7 @@ function ViewAllMenuItems() {
 
   const fetchMenuItems = async () => {
     try {
-      const response = await fetch('http://localhost:8080/menuItem/viewAllMenuItems');
+      const response = await fetch('https://restaurantdemo-production.up.railway.app/menuItem/viewAllMenuItems');
       if (response.ok) {
         const data = await response.json();
         setMenuItems(data);
@@ -38,7 +38,7 @@ function ViewAllMenuItems() {
 
   const handleUpdateMenuItem = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/menuItem/editMenuItem/${menuItemToEdit.id}?newName=${newName}&newDescription=${newDescription}&newPrice=${newPrice}`, {
+      const response = await fetch(`https://restaurantdemo-production.up.railway.app/menuItem/editMenuItem/${menuItemToEdit.id}?newName=${newName}&newDescription=${newDescription}&newPrice=${newPrice}`, {
         method: 'PUT',
       });
 

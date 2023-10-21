@@ -15,7 +15,7 @@ function EditSpeciality({ speciality, onSpecialityUpdated }) {
       };
       
 
-      fetch(`http://localhost:8080/speciality/updateSpeciality/${speciality.id}`, {
+      fetch(`https://restaurantdemo-production.up.railway.app/speciality/updateSpeciality/${speciality.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

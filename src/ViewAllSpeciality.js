@@ -9,7 +9,7 @@ function ViewAllSpeciality() {
 
   const fetchSpecialities = async () => {
     try {
-      const response = await fetch('http://localhost:8080/speciality/allSpeciality');
+      const response = await fetch('https://restaurantdemo-production.up.railway.app/speciality/allSpeciality');
       if (response.ok) {
         const data = await response.json();
         setSpecialities(data);
@@ -24,12 +24,19 @@ function ViewAllSpeciality() {
 
   
 
+
+
+
+
+
   useEffect(() => {
     fetchSpecialities();
   }, []);
 
 
 
+
+  
   
   // const handleSpecialityCreated = () => {
   //   fetchSpecialities();
