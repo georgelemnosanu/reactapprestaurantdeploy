@@ -12,18 +12,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* Use flexbox to make the notes flow horizontally and wrap to the next row */
-  /* "justify-content: space-between;" adds space between notes */
+ 
 }
 
 .note {
   background-color: #ffeedd;
   padding: 10px;
   border: 1px solid #ffccaa;
-  margin: 5px; /* Adjust the margin value to make the spacing smaller */
+  margin: 5px; 
   box-shadow: 2px 2px 5px #ddd;
   list-style: none;
   cursor: pointer;
   width: calc(30% - 5px);
-  height: calc(25% -5px); /* Adjust the width and spacing accordingly */
+  height: calc(25% -5px); 
 }
