@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import CreateSpeciality from './CreateSpeciality';
 
 function ViewAllSpeciality() {
   const [specialities, setSpecialities] = useState([]);
@@ -9,7 +9,7 @@ function ViewAllSpeciality() {
 
   const fetchSpecialities = async () => {
     try {
-      const response = await fetch('https://restaurantdemo-production.up.railway.app/speciality/allSpeciality');
+      const response = await fetch('https://lmncheap.store/speciality/allSpeciality');
       if (response.ok) {
         const data = await response.json();
         setSpecialities(data);
@@ -21,26 +21,13 @@ function ViewAllSpeciality() {
     }
   };
 
-
-  
-
-
-
-
-
-
   useEffect(() => {
     fetchSpecialities();
   }, []);
 
-
-
-
-  
-  
-  // const handleSpecialityCreated = () => {
-  //   fetchSpecialities();
-  // };
+  const handleSpecialityCreated = () => {
+    fetchSpecialities();
+  };
 
   const handleSpecialityEdit = (speciality) => {
     setIsEditing(true);
@@ -57,7 +44,7 @@ function ViewAllSpeciality() {
   
       console.log('Datele trimise la actualizare:', updatedSpeciality); // Adăugați acest console.log
   
-      fetch(`https://restaurantdemo-production.up.railway.app/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
+      fetch(`http://192.168.1.240:8080/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -83,7 +70,7 @@ function ViewAllSpeciality() {
 
   const handleSpecialityDelete = async (specialityId) => {
     try {
-      const response = await fetch(`https://restaurantdemo-production.up.railway.app/speciality/deleteSpeciality/${specialityId}`, {
+      const response = await fetch(`http://192.168.1.240:8080/speciality/deleteSpeciality/${specialityId}`, {
         method: 'DELETE',
       });
 

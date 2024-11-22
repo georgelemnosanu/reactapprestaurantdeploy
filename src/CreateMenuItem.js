@@ -15,7 +15,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 
   const fetchSpecialities = async () => {
     try {
-      const response = await fetch('https://restaurantdemo-production.up.railway.app/speciality/allSpeciality');
+      const response = await fetch('https://lmncheap.store/speciality/allSpeciality');
       if (response.ok) {
         const data = await response.json();
         setSpecialities(data);
@@ -29,7 +29,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 
   const handleCreateMenuItem = async () => {
     try {
-      const response = await fetch('https://restaurantdemo-production.up.railway.app/menuItem/submitCreateMenuItem', {
+      const response = await fetch('https://lmncheap.store/menuItem/submitCreateMenuItem', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ function CreateMenuItem({ onCreateMenuItem }) {
 }
 
 CreateMenuItem.propTypes = {
-  onCreateMenuItem: PropTypes.func,
+  onCreateMenuItem: PropTypes.func.isRequired, 
 };
 
 export default CreateMenuItem;

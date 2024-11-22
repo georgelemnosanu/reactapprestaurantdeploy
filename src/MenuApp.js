@@ -825,12 +825,12 @@ function MenuApp() {
   const [menuItemDetails, setMenuItemDetails] = useState({});
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
-  const [kitchenNotes] = useState('');
-  const [barNotes] = useState('');
+  const [kitchenNotes, setKitchenNotes] = useState('');
+  const [barNotes, setBarNotes] = useState('');
   const [currentCommandId, setCurrentCommandId] = useState(null); 
 
   useEffect(() => {
-    fetch(`https://restaurantdemo-production.up.railway.app/api/table/${tableId}/menus/1/specialities`)
+    fetch(`https://lmncheap.store/api/table/${tableId}/menus/1/specialities`)
       .then(response => response.json())
       .then(data => {
         setSpecialities(data);
@@ -838,7 +838,7 @@ function MenuApp() {
   }, [tableId]);
 
   const fetchMenuItems = specialityId => {
-    fetch(`https://restaurantdemo-production.up.railway.app/api/specialities/${specialityId}/menuitems`)
+    fetch(`https://lmncheap.store/api/specialities/${specialityId}/menuitems`)
       .then(response => response.json())
       .then(data => {
         const itemDetails = { ...menuItemDetails };
@@ -906,7 +906,7 @@ function MenuApp() {
       barNotes: barNotes,
     };
   
-    fetch('https://restaurantdemo-production.up.railway.app/command/create', {
+    fetch('https://lmncheap.store/command/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -935,7 +935,7 @@ function MenuApp() {
   
   const fetchCurrentCommand = () => {
     if (currentCommandId) {
-      fetch(`https://restaurantdemo-production.up.railway.app/command/${currentCommandId}`)
+      fetch(`https://lmncheap.store/command/${currentCommandId}`)
         .then(response => response.json())
         .then(data => {
           setCurrentCommand(data);
@@ -958,7 +958,7 @@ function MenuApp() {
   
       console.log('Sending JSON for update:', JSON.stringify(commandData));
   
-      fetch('https://restaurantdemo-production.up.railway.app/command/editCommand', {
+      fetch('https://lmncheap.store/command/editCommand', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

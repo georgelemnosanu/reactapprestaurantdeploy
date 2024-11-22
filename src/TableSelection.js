@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import MenuApp from './MenuApp'; // Import your MenuApp component
 
 function TableSelection() {
@@ -8,7 +9,7 @@ function TableSelection() {
 
   useEffect(() => {
     // Fetch table data when the component mounts
-    fetch(`https://restaurantdemo-production.up.railway.app/table/allTables`) 
+    fetch(`https://lmncheap.store/table/allTables`) 
       .then(response => response.json())
       .then(data => setTableData(data))
       .catch(error => console.error('Error fetching table data:', error));

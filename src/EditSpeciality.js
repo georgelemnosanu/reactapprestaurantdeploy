@@ -9,13 +9,10 @@ function EditSpeciality({ speciality, onSpecialityUpdated }) {
     if (speciality) {
       const updatedSpeciality = {
         id: speciality.id,
-        newName: newName, 
-  
-        
+        newName: newName, // Modifică aici pentru a trece newName în corpul cererii
       };
-      
 
-      fetch(`https://restaurantdemo-production.up.railway.app/speciality/updateSpeciality/${speciality.id}`, {
+      fetch(`http://localhost:8080/speciality/updateSpeciality/${speciality.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -1,56 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import './BarOrderView.css'; 
 
-function KitchenOrderView() {
-  const [commands, setCommands] = useState([]);
+function KitchenCommandView() {
+    const [commands, setCommands] = useState([]);
 
-  useEffect(() => {
-    fetch('https://restaurantdemo-production.up.railway.app/command/viewAllCommand')
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        const filteredCommands = data.filter((command) =>
-          command.menuItemsWithQuantities.some(
-            (menuItem) => menuItem.menuItem.speciality.specialityClass.id === 2
-          )
-        );
-        setCommands(filteredCommands);
-      })
-      .catch((error) => {
-        console.error('Error fetching commands:', error);
-      });
-  }, []);
+    useEffect(() => {
+      fetch('https://lmncheap.store/command/viewKitchenCommand')
+        .then((response) => response.json())
+        .then((data) => {
+          setCommands(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching commands:', error);
+        });
+    }, []);
 
   return (
-    <div className="bar-order-view">
-      <h2 className="title">Kitchen Orders</h2>
-      <div className="notes-container">
-  
+    <div>
+      <h2>All Commands for Kitchen</h2>
+      <ul>
         {commands.map((command) => (
-          <li className="note" key={command.id}>
-            <div><strong>Command ID:</strong> {command.id}</div>
-            {command.table && (
-              <div><strong>Table Number:</strong> {command.table.id}</div>
-            )}
-            <div><strong>Kitchen Notes:</strong> {command.kitchenAdditionalInformation}</div>
-            <h4>Kitchen Items:</h4>
-        
-              {command.menuItemsWithQuantities
-                .filter((menuItem) => menuItem.menuItem.speciality.specialityClass.id === 2)
-                .map((filteredMenuItem) => (
-                  <li key={filteredMenuItem.id}>
-                    <div>Name: {filteredMenuItem.menuItem.name}</div>
-                    <div>Description: {filteredMenuItem.menuItem.description}</div>
-                    <div>Quantity: {filteredMenuItem.quantity}</div>
+          <li key={command.id}>
+           <div><strong>Command ID:</strong> {command.id}</div>
+  <div><strong>Table Number:</strong> {command.table.id}</div>
+  <div><strong>Kitchen Notes:</strong> {command.kitchenAdditionalInformation}</div>
+            <h3>Kitchen Items:</h3>
+            <ul>
+              {command.menuItemsWithQuantities.map((menuItem) => (
+                <li key={menuItem.id}>
+                  <div>Name: {menuItem.menuItem.name}</div>
+                  <div>Description: {menuItem.menuItem.description}</div>
+                  <div>Quantity: {menuItem.quantity}</div>
                   </li>
-                ))
-              }
-            
+                ))}
+            </ul>
           </li>
         ))}
-     </div>
+      </ul>
     </div>
   );
 }
 
-export default KitchenOrderView;
+export default KitchenCommandView;
