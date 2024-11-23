@@ -25,14 +25,14 @@ function TableSelection() {
       <ul>
         {tableData.map(table => (
           <li key={table.id}>
-            {/* Use <Link> to create links */}
-            <a href={`/table/${table.id}/menu/${menuId}`} onClick={() => handleTableSelect(table.id)}>
+            {/* Folosește Link în loc de a href */}
+            <Link to={`/table/${table.id}/menu/${menuId}`} onClick={() => handleTableSelect(table.id)}>
               {table.tableName}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
-      {/* Render the MenuApp component conditionally based on selectedTable */}
+      {/* Renderizează componenta MenuApp pe baza selecției unei mese */}
       {selectedTable !== null && (
         <MenuApp tableId={selectedTable} />
       )}

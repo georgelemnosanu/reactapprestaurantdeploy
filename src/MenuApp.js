@@ -830,12 +830,12 @@ function MenuApp() {
   const [currentCommandId, setCurrentCommandId] = useState(null); 
 
   useEffect(() => {
-    fetch(`https://lmncheap.store/api/table/1/menus/1/specialities`)
+    fetch(`https://lmncheap.store/api/table/${tableId}/menus/${menuId}/specialities`)  // Folosește tableId și menuId din params
       .then(response => response.json())
       .then(data => {
         setSpecialities(data);
       });
-  }, [tableId]);
+  }, [tableId, menuId]);
 
   const fetchMenuItems = specialityId => {
     fetch(`https://lmncheap.store/api/specialities/${specialityId}/menuitems`)
