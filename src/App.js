@@ -15,7 +15,7 @@ function App() {
     <Router>
       <Switch>
         <Route path="/viewAllSpeciality" component={ViewAllSpeciality} />
-        <Route path="/table/:tableId/menu/:menuId" component={MenuApp} />
+        <Route path="/api/table/:tableId/menu/:menuId/specialities" component={MenuApp} />
         <Route path="/createSpeciality" component={CreateSpeciality} />
         <Route path="/viewAllMenuItems" component={ViewAllMenuItems} />
         <Route path="/createMenuItem" component={CreateMenuItem} />
