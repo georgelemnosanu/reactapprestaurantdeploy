@@ -26,7 +26,7 @@ function TableSelection() {
         {tableData.map(table => (
           <li key={table.id}>
             {/* Use <Link> to create links */}
-            <a href={`/api/table/${table.id}/menu/${menuId}/specialities`} onClick={() => handleTableSelect(table.id)}>
+            <a href={`https://lmncheap.store/api/table/${table.id}/menu/${menuId}/specialities`} onClick={() => handleTableSelect(table.id)}>
               {table.tableName}
             </a>
           </li>
