@@ -44,7 +44,7 @@ function ViewAllSpeciality() {
   
       console.log('Datele trimise la actualizare:', updatedSpeciality); // Adăugați acest console.log
   
-      fetch(`http://192.168.1.240:8080/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
+      fetch(`https://lmncheap.store/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -70,7 +70,7 @@ function ViewAllSpeciality() {
 
   const handleSpecialityDelete = async (specialityId) => {
     try {
-      const response = await fetch(`http://192.168.1.240:8080/speciality/deleteSpeciality/${specialityId}`, {
+      const response = await fetch(`https://lmncheap.store/speciality/deleteSpeciality/${specialityId}`, {
         method: 'DELETE',
       });
 

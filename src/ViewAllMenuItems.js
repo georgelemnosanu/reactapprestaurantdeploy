@@ -38,7 +38,7 @@ function ViewAllMenuItems() {
 
   const handleUpdateMenuItem = async () => {
     try {
-      const response = await fetch(`http://192.168.1.240:8080/menuItem/editMenuItem/${menuItemToEdit.id}?newName=${newName}&newDescription=${newDescription}&newPrice=${newPrice}`, {
+      const response = await fetch(`https://lmncheap.store/menuItem/editMenuItem/${menuItemToEdit.id}?newName=${newName}&newDescription=${newDescription}&newPrice=${newPrice}`, {
         method: 'PUT',
       });
 
@@ -64,7 +64,7 @@ function ViewAllMenuItems() {
 
   const handleMenuItemDelete = async (menuItemId) => {
     try {
-        const response = await fetch(`http://192.168.1.240:8080/menuItem/deleteMenuItem/${menuItemId}`, {
+        const response = await fetch(`https://lmncheap.store/menuItem/deleteMenuItem/${menuItemId}`, {
             method: 'DELETE',
           });
           

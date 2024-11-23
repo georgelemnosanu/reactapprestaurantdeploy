@@ -5,7 +5,7 @@ function BarOrderView() {
   const [commands, setCommands] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8080/command/viewAllCommand')
+    fetch('https://lmncheap.store/command/viewAllCommand')
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

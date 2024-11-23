@@ -830,7 +830,7 @@ function MenuApp() {
   const [currentCommandId, setCurrentCommandId] = useState(null); 
 
   useEffect(() => {
-    fetch(`https://lmncheap.store/api/table/${tableId}/menus/1/specialities`)
+    fetch(`https://lmncheap.store/api/table/1/menus/1/specialities`)
       .then(response => response.json())
       .then(data => {
         setSpecialities(data);

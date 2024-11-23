@@ -24,7 +24,7 @@ const Menus = () => {
     }
   
     try {
-      const response = await fetch(`http://localhost:8080/menu/editMenu/${menuToEdit.id}?newName=${newName}`, {
+      const response = await fetch(`https://lmncheap.store/menu/editMenu/${menuToEdit.id}?newName=${newName}`, {
         method: 'PUT',
       });
   
@@ -64,7 +64,7 @@ const Menus = () => {
 
   const fetchMenus = async () => {
     try {
-      const response = await fetch('http://localhost:8080/menu/allMenu');
+      const response = await fetch('https://lmncheap.store/menu/allMenu');
       const data = await response.json();
       setMenus(data);
     } catch (error) {

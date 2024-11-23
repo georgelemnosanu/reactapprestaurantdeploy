@@ -11,7 +11,7 @@ function ViewAllTables() {
   }, []);
 
   const fetchTables = () => {
-    fetch('http://localhost:8080/table/allTables')
+    fetch('https://lmncheap.store/table/allTables')
       .then(response => response.json())
       .then(data => {
         setTables(data);
@@ -29,7 +29,7 @@ function ViewAllTables() {
 
   const handleUpdateTable = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/table/editTable/${tableToEdit.id}`, {
+      const response = await fetch(`https://lmncheap.store/table/editTable/${tableToEdit.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded', 
