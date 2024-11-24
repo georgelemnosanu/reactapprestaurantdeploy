@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import MenuApp from './MenuApp'; // Import your MenuApp component
+import MenuApp from './MenuApp';
 
 function TableSelection() {
   const [selectedTable, setSelectedTable] = useState(null);
   const [tableData, setTableData] = useState([]);
-  const menuId = 1; // Fixed menuId
+  const menuId = 1; 
 
   useEffect(() => {
-    // Fetch table data when the component mounts
     fetch(`https://lmncheap.store/table/allTables`) 
       .then(response => response.json())
       .then(data => setTableData(data))
@@ -25,14 +24,13 @@ function TableSelection() {
       <ul>
         {tableData.map(table => (
           <li key={table.id}>
-            {/* Folosește Link în loc de a href */}
+
             <Link to={`/table/${table.id}/menu/${menuId}`} onClick={() => handleTableSelect(table.id)}>
               {table.tableName}
             </Link>
           </li>
         ))}
       </ul>
-      {/* Renderizează componenta MenuApp pe baza selecției unei mese */}
       {selectedTable !== null && (
         <MenuApp tableId={selectedTable} />
       )}

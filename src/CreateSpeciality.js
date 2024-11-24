@@ -12,7 +12,7 @@ function CreateSpeciality() {
     };
 
  
-    fetch('https://lmncheap.store/speciality/submitCreateSpeciality', {
+    fetch('http://localhost:8080/speciality/submitCreateSpeciality', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

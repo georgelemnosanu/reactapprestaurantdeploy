@@ -4,7 +4,7 @@ function KitchenCommandView() {
     const [commands, setCommands] = useState([]);
 
     useEffect(() => {
-      fetch('http://192.168.1.240:8080/command/barCommandList')
+      fetch('https://lmncheap.store/command/viewAllCommand')
         .then((response) => response.json())
         .then((data) => {
           setCommands(data);
@@ -22,8 +22,9 @@ function KitchenCommandView() {
           <li key={command.id}>
            <div><strong>Command ID:</strong> {command.id}</div>
   <div><strong>Table Number:</strong> {command.table.id}</div>
-  <div><strong>Bar Notes:</strong> {command.barAdditionalInformation}</div>
-            <h3>Bar Items:</h3>
+  <div><strong>Notes:</strong> {command.barAdditionalInformation}</div>
+  <div><strong>Notes:</strong> {command.kitchenAdditionalInformation}</div>
+            <h3>Items:</h3>
             <ul>
               {command.menuItemsWithQuantities.map((menuItem) => (
                 <li key={menuItem.id}>

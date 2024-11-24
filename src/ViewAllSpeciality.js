@@ -32,17 +32,17 @@ function ViewAllSpeciality() {
   const handleSpecialityEdit = (speciality) => {
     setIsEditing(true);
     setSpecialityToEdit(speciality);
-    setNewName(speciality.name); // Setăm numele specialității în câmpul de editare
+    setNewName(speciality.name); 
   };
 
   const handleSpecialityUpdate = () => {
     if (specialityToEdit) {
       const updatedSpeciality = {
         id: specialityToEdit.id,
-        newName: newName, // Noul nume pentru specialitate
+        newName: newName, 
       };
   
-      console.log('Datele trimise la actualizare:', updatedSpeciality); // Adăugați acest console.log
+      console.log('Datele trimise la actualizare:', updatedSpeciality); 
   
       fetch(`https://lmncheap.store/speciality/updateSpeciality/${specialityToEdit.id}?newName=${newName}`, {
         method: 'PUT',
@@ -56,8 +56,8 @@ function ViewAllSpeciality() {
             console.log('Speciality updated successfully');
             setIsEditing(false);
             setSpecialityToEdit(null);
-            setNewName(''); // Resetăm câmpul de editare
-            fetchSpecialities(); // Actualizăm lista de specialități
+            setNewName(''); 
+            fetchSpecialities(); 
           } else {
             console.error('Failed to update Speciality');
           }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link ,Redirect} from 'react-router-dom';
 import ViewAllSpeciality from './ViewAllSpeciality';
 import MenuApp from './MenuApp';
 import CreateSpeciality from './CreateSpeciality';
@@ -22,8 +22,10 @@ function App() {
         <Route path="/tableSelection" component={TableSelection} />
         <Route path="/barcorderview" component={BarOrderView} />
         <Route path="/kitchenorderview" component={KitchenOrderView} />
-        
-        <Route path="/" component={DefaultComponent} />
+        <Route exact path="/">
+          <Redirect to="/table/1/menu/1" />
+        </Route>
+        <Route path="/all" component={DefaultComponent} />
       </Switch>
     </Router>
   );
@@ -49,12 +51,8 @@ function DefaultComponent() {
       <a href="/tableSelection">View All Tables</a>
     </li>
     <li>
-      <a href="/barcorderview">View barCommands</a>
+      <a href="/barcorderview">View Command</a>
     </li>
-    <li>
-      <a href="/kitchenorderview">View KitchenOrders</a>
-    </li>
-    
     
   </ul>
 </nav>

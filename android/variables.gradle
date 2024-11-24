@@ -13,4 +13,8 @@ ext {
     androidxJunitVersion = '1.1.5'
     androidxEspressoCoreVersion = '3.5.1'
     cordovaAndroidVersion = '10.1.1'
+    MYAPP_RELEASE_STORE_FILE = project.hasProperty('MYAPP_RELEASE_STORE_FILE') ? MYAPP_RELEASE_STORE_FILE : '/path/to/your/keystore.jks'
+    MYAPP_RELEASE_STORE_PASSWORD = project.hasProperty('MYAPP_RELEASE_STORE_PASSWORD') ? MYAPP_RELEASE_STORE_PASSWORD : 'your_keystore_password'
+    MYAPP_RELEASE_KEY_ALIAS = project.hasProperty('MYAPP_RELEASE_KEY_ALIAS') ? MYAPP_RELEASE_KEY_ALIAS : 'your_key_alias'
+    MYAPP_RELEASE_KEY_PASSWORD = project.hasProperty('MYAPP_RELEASE_KEY_PASSWORD') ? MYAPP_RELEASE_KEY_PASSWORD : 'your_key_password'
 }

@@ -14,8 +14,9 @@ function CreateMenuItem({ onCreateMenuItem }) {
   }, []);
 
   const fetchSpecialities = async () => {
+    
     try {
-      const response = await fetch('https://lmncheap.store/speciality/allSpeciality');
+      const response = await fetch(`https://lmncheap.store/speciality/allSpeciality`);
       if (response.ok) {
         const data = await response.json();
         setSpecialities(data);

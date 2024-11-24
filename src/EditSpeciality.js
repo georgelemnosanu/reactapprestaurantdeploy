@@ -12,7 +12,7 @@ function EditSpeciality({ speciality, onSpecialityUpdated }) {
         newName: newName, // Modifică aici pentru a trece newName în corpul cererii
       };
 
-      fetch(`http://localhost:8080/speciality/updateSpeciality/${speciality.id}`, {
+      fetch(`https://lmncheap.store/speciality/updateSpeciality/${speciality.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
