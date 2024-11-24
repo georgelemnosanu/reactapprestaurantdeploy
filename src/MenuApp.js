@@ -22,7 +22,7 @@ function MenuApp() {
   const [currentCommandId, setCurrentCommandId] = useState(null); 
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/table/${tableId}/menus/1/specialities`)  // Folosește tableId și menuId din params
+    fetch(`https://lmncheap.store/api/table/1/menus/1/specialities`)  
       .then(response => response.json())
       .then(data => {
         setSpecialities(data);
@@ -30,7 +30,7 @@ function MenuApp() {
   }, [tableId]);
 
   const fetchMenuItems = specialityId => {
-    fetch(`http://localhost:8080/api/specialities/${specialityId}/menuitems`)
+    fetch(`https://lmncheap.store/api/specialities/${specialityId}/menuitems`)
       .then(response => response.json())
       .then(data => {
         const itemDetails = { ...menuItemDetails };
@@ -98,7 +98,7 @@ function MenuApp() {
       barNotes: barNotes,
     };
   
-    fetch('http://localhost:8080/command/create', {
+    fetch('https://lmncheap.store/command/create', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +126,7 @@ function MenuApp() {
   
   const fetchCurrentCommand = () => {
     if (currentCommandId) {
-      fetch(`http://localhost:8080/command/${currentCommandId}`)
+      fetch(`https://lmncheap.store/command/${currentCommandId}`)
         .then(response => response.json())
         .then(data => {
           setCurrentCommand(data);
